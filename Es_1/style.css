@@ -4,6 +4,7 @@
     --btns: #3A5A40;
     --btnshov: #344E41;
     --brd: #588157;
+    --rmvbtn : #24362d;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
     margin: 0;
 }
 
-/* Stile per i buttons */
+/* Stile per gli "Static" buttons */
 .btn-custom {
     background-color: var(--btns);
     border-color: var(--brd);
@@ -96,4 +97,11 @@ body {
     width: 1.5em;
     height: 1.5em;
     stroke: white;
+}
+
+/* Stile per i "dynamic" buttons */
+.remove-contact-btn{
+    background-color: var(--rmvbtn);
+    border:var(--brd);
+    transition: background-color 0.3s ease, transform 0.2s;
 }
