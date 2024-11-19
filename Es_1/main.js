@@ -9,6 +9,10 @@
 //? modifica contatto
 
 
+const buttonShow = document.querySelector('#button-show');
+const nameInput = document.querySelector('#name');
+const surnameInput = document.querySelector('#surname');
+const numberInput = document.querySelector('#number');
 const cardContainer = document.querySelector('#card-container');
 
 const rubrica = {
@@ -18,8 +22,8 @@ const rubrica = {
         { name: 'Lorenzo', surname: 'Trevisani', number: '3248675645' }
     ],
 
-    // Funzione per mostrare i contatti
-    showContacts: function() {
+    //^ Funzione per mostrare i contatti
+    showContacts: function () {
         // Svuota il contenitore per evitare duplicati
         cardContainer.innerHTML = '';
 
@@ -28,7 +32,7 @@ const rubrica = {
             // Creo una card(Bootcard)
             const div = document.createElement('div');
             // E definisco un preset Bootstrap
-            div.classList.add('card', 'mb-3'); 
+            div.classList.add('card', 'mb-3');
             //Inietto effettivamente la Bootcard appena definita
             div.innerHTML = `
                 <div class="card-body">
@@ -38,8 +42,33 @@ const rubrica = {
                 </div>
             `;
             // Appendo Bootcard al CardContainer Statico HTML
-            cardContainer.appendChild(div); 
+            cardContainer.appendChild(div);
         });
     }
 };
+
+//^ Condiziono la funzione Mostra Contatti nell'evento click
+buttonShow.addEventListener('click', () => {
+    //Se il CardContainer è vuoto al, click mostrami le n Bootcards
+    if (cardContainer.innerHTML === '') {
+        rubrica.showContacts();
+        buttonShow.textContent = 'Nascondi Contatti';
+    } else {
+        //Altrimenti pulisco i contatti Bootcard nel container
+        cardContainer.innerHTML = '';
+        // Quindi faccio credere all'user che siano tornati in "tendina"
+        buttonShow.textContent = 'Mostra Contatti';
+    }
+});
+
+// Opzione Userfriendly ^ - ^
+// Funzione autoclear per gli input
+const svuotatext = () => {
+    nameInput.value = '';
+    surnameInput.value = '';
+    numberInput.value = '';
+};
+
+//Invoco la arrowfunction appena creata per avere un riscontro visivo
+svuotatext();
 
