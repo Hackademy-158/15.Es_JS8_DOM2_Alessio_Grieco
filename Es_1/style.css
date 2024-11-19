@@ -1,0 +1,66 @@
+/* Stile Body */
+
+:root {
+    --main: #A3B18A;
+    --btns: #3A5A40;
+    --btnshov: #344E41;
+    --brd: #588157;
+}
+
+body {
+    background-color: var(--main);
+}
+
+
+
+/* Stile per i buttons */
+.btn-custom {
+    background-color: var(--btns);
+    border-color: var(--brd);
+    border-width: 3px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: rgb(243, 243, 243);
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, background-color 0.3s, transform 0.2s, 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+justify-content: center;
+}
+
+.btn-custom:hover {
+    background-color: var(--btns);
+    border-color: var(--brd);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+
+}
+
+/* Stile per le icone */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    background-color: var(--btns);
+    border-color: var(--brd);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn-icon:hover {
+    background-color: var(--btns);
+    transform: scale(1.1);
+}
+
+.btn-icon svg {
+    width: 1.5em;
+    height: 1.5em;
+    stroke: white;
+
+}
