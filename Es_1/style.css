@@ -1,5 +1,4 @@
 /* Stile Body */
-
 :root {
     --main: #A3B18A;
     --btns: #3A5A40;
@@ -8,10 +7,35 @@
 }
 
 body {
+    background: linear-gradient(to bottom, #A3B18A, #588157, #3A5A40, #344E41 );
     background-color: var(--main);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
 }
 
+/* Stile Interfaccia Form */
+.r-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    height: 80%; 
+    width: 100%;
+}
 
+/* Stile per la sezione degli input */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 100%; 
+    margin: 0;
+}
 
 /* Stile per i buttons */
 .btn-custom {
@@ -21,12 +45,13 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: rgb(243, 243, 243);
-    padding: 10px 20px;
+    padding: 0 2;
+    margin: 20px;
     font-size: 16px;
-    transition: background-color 0.3s ease, background-color 0.3s, transform 0.2s, 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s;
     cursor: pointer;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
-justify-content: center;
+
 }
 
 .btn-custom:hover {
@@ -38,6 +63,13 @@ justify-content: center;
 }
 
 /* Stile per le icone */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    margin-top: 0; 
+}
+
 .btn-icon {
     display: inline-flex;
     align-items: center;
@@ -51,6 +83,8 @@ justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    margin: 8px; 
+
 }
 
 .btn-icon:hover {
@@ -62,5 +96,4 @@ justify-content: center;
     width: 1.5em;
     height: 1.5em;
     stroke: white;
-
 }
