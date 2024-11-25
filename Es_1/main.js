@@ -47,6 +47,53 @@ const rubrica = {
     }
 };
 
+// Aggiunge alle card dinamiche un btn bootstrap
+const removeButtons = document.querySelectorAll('.remove-contact-btn');
+//Quindi ciclo il bottone e gli assegno al click la funzione rimuovi contatto(v. row 62)
+removeButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        this.removeContact(index);
+    });
+});
+},
+//^Funzione che Aggiunge il Contatto
+addContact: function(name, surname, number) {
+    this.contacts.push({ name, surname, number });
+    this.showContacts();
+},
+//^Funzione che Rimuove il Contatto
+removeContact: function(index) {
+    this.contacts.splice(index, 1);
+    this.showContacts();
+}
+};
+// Condiziono la funzione Mostra Contatti
+buttonShow.addEventListener('click', () => {
+    // Controllo se è vuoto
+    if (cardContainer.innerHTML == '') {
+        rubrica.showContacts();
+        buttonShow.textContent = 'Nascondi Contatti';
+    } else {
+        cardContainer.innerHTML = '';
+        buttonShow.textContent = 'Mostra Contatti';
+    }
+});
+
+// Aggiungi Contatto
+addButton.addEventListener('click', () => {
+    const name = nameInput.value;
+    const surname = surnameInput.value;
+    const number = numberInput.value;
+    if (name && surname && number) {
+        rubrica.addContact(name, surname, number);
+        nameInput.value = '';
+        surnameInput.value = '';
+        numberInput.value = '';
+    }
+});
+});
+
+
 //^ Condiziono la funzione Mostra Contatti nell'evento click
 buttonShow.addEventListener('click', () => {
     //Se il CardContainer è vuoto al, click mostrami le n Bootcards
@@ -71,4 +118,5 @@ const svuotatext = () => {
 
 //Invoco la arrowfunction appena creata per avere un riscontro visivo
 svuotatext();
+
 
